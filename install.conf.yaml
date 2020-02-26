@@ -1,0 +1,11 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+    - ~/.config/nvim
+
+- link:
+    ~/.config/nvim/init.vim: dotfiles/nvim/init.vim
