@@ -22,3 +22,7 @@
         if: '[ -x "$(command -v tmux)" ]'
         path: dotfiles/.tmux.conf
 
+
+- shell:
+    - [tmux source ~/.tmux.conf, "Sourcing tmux config for the first time - to boostrap TPM"]
+    - [~/.tmux/plugins/tpm/scripts/install_plugins.sh, "Installing TPM-managed plugins"]
