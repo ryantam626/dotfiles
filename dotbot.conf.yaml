@@ -21,7 +21,10 @@
     ~/.tmux.conf:
         if: '[ -x "$(command -v tmux)" ]'
         path: dotfiles/.tmux.conf
-
+    ~/.gtkrc-2.0:
+        path: dotfiles/.gtkrc-2.0
+    ~/.config/gtk-3.0:
+        path: dotfiles/gtk-3.0
 
 - shell:
     - [tmux source ~/.tmux.conf, "Sourcing tmux config for the first time - to boostrap TPM"]
