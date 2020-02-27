@@ -9,5 +9,6 @@
 
 - link:
     ~/.config/nvim/:
+        if: '[ -x "$(command -v nvim)" ]'
         glob: true
         path: dotfiles/nvim/*.vim
