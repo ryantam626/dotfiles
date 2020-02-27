@@ -26,6 +26,9 @@
     ~/.config/gtk-3.0:
         path: dotfiles/gtk-3.0
     ~/wallpapers:
+    # Keyboard remapping config
+    ~/.xkb:
+        path: dotfiles/.xkb
 
 - shell:
     - [tmux source ~/.tmux.conf, "Sourcing tmux config for the first time - to boostrap TPM"]
