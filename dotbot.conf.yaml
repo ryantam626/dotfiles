@@ -18,3 +18,7 @@
     ~/.p10k.zsh:
         if: '[ -x "$(command -v zsh)" ]'
         path: dotfiles/.p10k.zsh
+    ~/.tmux.conf:
+        if: '[ -x "$(command -v tmux)" ]'
+        path: dotfiles/.tmux.conf
+
