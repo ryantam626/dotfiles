@@ -12,3 +12,9 @@
         if: '[ -x "$(command -v nvim)" ]'
         glob: true
         path: dotfiles/nvim/*.vim
+    ~/.zshrc:
+        if: '[ -x "$(command -v zsh)" ]'
+        path: dotfiles/.zshrc
+    ~/.p10k.zsh:
+        if: '[ -x "$(command -v zsh)" ]'
+        path: dotfiles/.p10k.zsh
