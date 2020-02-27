@@ -25,6 +25,8 @@
         path: dotfiles/.gtkrc-2.0
     ~/.config/gtk-3.0:
         path: dotfiles/gtk-3.0
+    ~/.Xresources:
+        path: dotfiles/.Xresources
     ~/scripts:
         path: bin/
     ~/wallpapers:

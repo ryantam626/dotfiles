@@ -1,0 +1,44 @@
+! Fonts
+! =====
+!
+!
+!URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+URxvt*font: xft:UbuntuMono Nerd Font Mono:regular:size=11,antialias=true:hinting=true
+URxvt*imFont: xft:UbuntuMono Nerd Font Mono:regular:size=11,antialias=true:hinting=true
+URxvt*boldFont: xft:UbuntuMono Nerd Font Mono:bold:size=11,antialias=true:hinting=true
+URxvt*italicFont: xft:UbuntuMono Nerd Font Mono:italic:size=11,antialias=true:hinting=true
+URxvt*boldItalicFont: xft:UbuntuMono Nerd Font Mono:bold:italic:size=11,antialias=true:hinting=true
+URxvt.allow_bold: true
+URxvt.cutchars: "\"(),<>[]{}|'`│"
+
+! Clickable And Yankable URL
+! =========================
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.colorUL: #4682B4
+URxvt.keysym.M-u: perl:matcher:select
+
+! Scrollbar
+! =========
+URxvt.scrollBar: false
+
+
+! Key Bindings
+! ============
+
+! Copy/Paste, same keys as gnome-terminal
+! https://stackoverflow.com/questions/39884093
+! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings
+URxvt.keysym.C-M-c:    builtin-string:
+URxvt.keysym.C-M-v:    builtin-string:
+! Bind Ctrl-Shift-c & Ctrl-Shift-v to copy and paste
+! I dont know why, but I needed to use hex keysym values to get it to work
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
