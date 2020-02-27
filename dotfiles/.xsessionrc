@@ -1,0 +1,23 @@
+# Setup monitor
+/home/ryan/scripts/setup-monitor.sh
+
+# Remap keys
+/home/ryan/scripts/remap-keys.sh
+
+# Setup wallpaper
+/home/ryan/scripts/set-wallpaper.sh
+
+# System tray
+stalonetray &
+
+# Network applet
+if [ -x /usr/bin/nm-applet ] ; then
+   nm-applet --sm-disable &
+fi
+
+# Make color scheme avaliable in Xmonad config
+mkdir -p /home/ryan/.xmonad/lib
+ln -s /home/ryan/.cache/wal/colors.hs /home/ryan/.xmonad/lib/Colors.hs
+
+# Start DE
+exec xmonad

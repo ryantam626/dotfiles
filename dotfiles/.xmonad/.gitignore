@@ -1,0 +1,6 @@
+*.errors
+*.o
+*.hi
+lib/Colors.hs
+xmonad-x86_64-linux
+*.swp
