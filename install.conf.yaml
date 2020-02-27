@@ -8,4 +8,6 @@
     - ~/.config/nvim
 
 - link:
-    ~/.config/nvim/init.vim: dotfiles/nvim/init.vim
+    ~/.config/nvim/:
+        glob: true
+        path: dotfiles/nvim/*.vim
