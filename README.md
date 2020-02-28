@@ -4,6 +4,7 @@ These are my machine-common dotfiles and scripts to setup my workstations.
 
 ## General
 
+- ubuntu (OS)
 - urxvt (terminal emulator)
 - zsh (shell)
 
@@ -33,10 +34,13 @@ These are my machine-common dotfiles and scripts to setup my workstations.
 
 # Installation steps
 
+WARNING: This installs shit ton of stuff, and only MIGHT works for debian-based system (other than 19.10 ubuntu that I am using right now), there will be a high chance of seemingly bricking your system if you are unfamiliar with the changes. The `.xsessionrc` is a particular high risk one, you will need to recover your system by editing/removing the file with a tty (Ctrl+Alt+F3 works for me).
+
 ```
 wget -O - https://raw.githubusercontent.com/ryantam626/dotfiles/master/installers/bootstrap.sh | sh
 git clone https://github.com/ryantam626/dotfiles.git dotfiles
 cd dotfiles
+# Optionally look at the `install.sh` + `installers.sh` and remove some optional stuff
 ./installers/install.sh
 # Say yes and change the default shell to zsh
 
