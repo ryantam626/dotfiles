@@ -1,0 +1,11 @@
+[user]
+	email = ryantam626@gmail.com
+	name = Ryan Tam
+[alias]
+	rbm = !git fetch origin && git rebase origin/master
+	dm = diff master...
+	zco = "!f() { git checkout $(git bls \"$@\"|grep -v '^*'|fzf|awk '{print $1}'); }; f"
+[stash]
+	showPatch = true
+[rebase]
+	autosquash = true

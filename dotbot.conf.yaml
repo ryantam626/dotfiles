@@ -29,6 +29,8 @@
         force: true
     ~/.Xresources:
         path: dotfiles/.Xresources
+    ~/.gitconfig:
+        path: dotfiles/.gitconfig
     ~/scripts:
     ~/wallpapers:
     # Keyboard remapping config
