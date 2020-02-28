@@ -16,7 +16,7 @@ fail() {
 
 bootstrap_install() {
 	sudo apt update
-	sudo apt install curl git -y
+	sudo apt install curl git neovim -y
 }
 
 info "Yo dawg I heard you like installations, so I am installing some stuff so you can install even more stuff.\n"
