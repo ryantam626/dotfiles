@@ -30,7 +30,6 @@
     ~/.Xresources:
         path: dotfiles/.Xresources
     ~/scripts:
-        path: bin/
     ~/wallpapers:
     # Keyboard remapping config
     ~/.xkb:
