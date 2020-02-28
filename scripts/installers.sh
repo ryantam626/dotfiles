@@ -92,6 +92,8 @@ install_pywal() {
 
 install_fonts() {
 	info "Install fonts\n"
+	mkdir -p ~/.fonts/
+	
     wget https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
     unzip 1.050R-it.zip
     cp source-code-pro-*-it/OTF/*.otf ~/.fonts/
