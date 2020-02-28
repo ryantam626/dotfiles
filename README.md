@@ -63,7 +63,7 @@ reboot
 ## Known quirks
 
 - zsh/p10k seem to fail to load proper theme with the very first tmux managed shell;
-
+- google-chrome is not installed, yet I use it as default browser in xmonad;
 
 # License
 
