@@ -53,8 +53,7 @@ install_launcher() {
 install_terminal() {
 	info "Installing terminal and tmux+tpm\n"
 	${QUIET_APT_INSTALL} rxvt-unicode tmux
-	TPM_DIR="~/.tmux/plugins/tpm"
-	[ ! -d "${TPM_DIR}" ] && git clone https://github.com/tmux-plugins/tpm "${TPM_DIR}"
+	[ ! -d "~/.tmux/plugins/tpm" ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 install_utils() {
