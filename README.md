@@ -1,3 +1,36 @@
+These are my machine-common dotfiles and scripts to setup my workstations.
+
+# My steup
+
+## General
+
+- urxvt (terminal emulator)
+- zsh (shell)
+
+## "Desktop environment"
+
+- xmonad (tiling window manager)
+- rofi (launcher)
+- xmobar (bar)
+- stalonetray (tray)
+- i3lock (lock)
+- i3lock-fancy (lock)
+
+## CLI
+
+- nvim (editor)
+- tmux (terminal multiplexer)
+
+## GUI
+
+- sublime (spare editor, config is not ported yet)
+- spotify (music client, themed by spicetify)
+
+## Other shit
+
+- setxkbmap (changes keymap to a very custom one, to be explained some day...)
+- xcape (mapping capslock to hyper modifier on long press)
+
 # Installation steps
 
 ```
@@ -22,3 +55,7 @@ tmux # start tmux up once to initialise some stuff
 
 reboot
 ```
+
+## Known quirks
+
+- zsh/p10k seem to fail to load proper theme with the very first tmux managed shell;
