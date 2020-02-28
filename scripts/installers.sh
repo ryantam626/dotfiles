@@ -21,13 +21,16 @@ install_zsh() {
 	${QUIET_APT_INSTALL} zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
 
-	# some plugins
+
+
+}
+
+install_zsh_plugins() {
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k
-	git clone git@github.com:chisui/zsh-nix-shell.git $ZSH/custom/plugins/nix-shell
-	git clone git@github.com:spwhitt/nix-zsh-completions.git $ZSH/custom/plugins/nix-zsh-completions
+	#git clone git@github.com:chisui/zsh-nix-shell.git $ZSH/custom/plugins/nix-shell
+	#git clone git@github.com:spwhitt/nix-zsh-completions.git $ZSH/custom/plugins/nix-zsh-completions
 	git clone https://github.com/zsh-users/zsh-completions ${ZSH}/custom/plugins/zsh-completions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
 }
 
 
