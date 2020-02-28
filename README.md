@@ -63,3 +63,8 @@ reboot
 ## Known quirks
 
 - zsh/p10k seem to fail to load proper theme with the very first tmux managed shell;
+
+
+# License
+
+MIT
