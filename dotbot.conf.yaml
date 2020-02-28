@@ -47,7 +47,6 @@
         path: dotfiles/.xsessionrc
 
 - shell:
-    - [tmux &, "Starting tmux for the first time"]
     - [tmux source ~/.tmux.conf, "Sourcing tmux config for the first time - to boostrap TPM"]
     - [~/.tmux/plugins/tpm/scripts/install_plugins.sh, "Installing TPM-managed plugins"]
     - [sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt , "Update terminal emulator to urxvt."]
