@@ -12,12 +12,15 @@
         if: '[ -x "$(command -v nvim)" ]'
         glob: true
         path: dotfiles/nvim/*.vim
+        force: true
     ~/.zshrc:
         if: '[ -x "$(command -v zsh)" ]'
         path: dotfiles/.zshrc
+        force: true
     ~/.p10k.zsh:
         if: '[ -x "$(command -v zsh)" ]'
         path: dotfiles/.p10k.zsh
+        force: true
     ~/.tmux.conf:
         if: '[ -x "$(command -v tmux)" ]'
         path: dotfiles/.tmux.conf
@@ -25,6 +28,7 @@
         path: dotfiles/.gtkrc-2.0
     ~/.config/gtk-3.0:
         path: dotfiles/gtk-3.0
+        force: true
     ~/.Xresources:
         path: dotfiles/.Xresources
     ~/scripts:
