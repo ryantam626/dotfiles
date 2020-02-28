@@ -150,6 +150,7 @@ install_spotify() {
 	rm -rf /tmp/spicetify-themes
 
 	spotify &  # spotify has to be ran at least once before applying theme
+	sleep 5  # yeah...
 	~/apps/spicetify/spicetify config current_theme Pop-Dark
 	~/apps/spicetify/spicetify backup apply
 }
