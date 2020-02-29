@@ -55,6 +55,12 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 "" Ident
 Plug 'tpope/vim-sleuth'
 
+"" Language server protocol client
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 call plug#end()
 
 "*****************************************************************************
@@ -93,6 +99,21 @@ nnoremap <space>ac :%y+<CR>
 " Redo with U instead of Ctrl-R
 noremap U <C-R>
 
+
+"*****************************************************************************
+"" Language Server Protocol Settings
+"*****************************************************************************
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/home/ryan/miniconda3/bin/javascript-typescript-stdio'],
+    \ }
+    " \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    " \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 "*****************************************************************************
 "" FZF Settings
