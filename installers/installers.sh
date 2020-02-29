@@ -158,6 +158,7 @@ install_pycharm() {
 	PYCHARM_TAR="${PYCHARM_VERSION}.tar.gz"
 	LAUNCH_PYCHARM_CMD="wmname LG3D && ~/apps/${PYCHARM_DIR_NAME}/bin/pycharm.sh"
 	LAUNCH_PYCHARM_SCRIPT_PATH="/usr/local/bin/pycharm"
+	${QUIET_APT_INSTALL} wmname
 
 	mkdir -p /tmp/pycharm
 	wget https://download.jetbrains.com/python/${PYCHARM_TAR} -P /tmp/pycharm
