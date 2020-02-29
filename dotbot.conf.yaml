@@ -33,6 +33,9 @@
         path: dotfiles/.gitconfig
     ~/scripts:
     ~/wallpapers:
+    ~/.condarc:
+        if: '[ -x "$(command -v conda)" ]'
+        path: dotfiles/.condarc
     # Keyboard remapping config
     ~/.xkb:
         path: dotfiles/.xkb
