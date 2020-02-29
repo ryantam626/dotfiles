@@ -47,7 +47,7 @@ Plug 'vim-scripts/eraseSubword'
 Plug 'bling/vim-bufferline'
 
 "" Theme
-Plug 'rakr/vim-two-firewatch'
+Plug  'arzg/vim-colors-xcode'
 
 "" Relative line
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -61,9 +61,7 @@ call plug#end()
 "" Theme
 "*****************************************************************************
 
-set background=dark " or light if you prefer the light version
-let g:two_firewatch_italics=1
-colo two-firewatch
+colorscheme xcodedark
 
 "*****************************************************************************
 "" Key Mappings
