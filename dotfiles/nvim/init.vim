@@ -65,6 +65,10 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+"" Typescript IDE
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
 
 "*****************************************************************************
