@@ -64,7 +64,8 @@ install_utils() {
 		pavucontrol \
 		fzf \
 		autoconf \
-		openssh-server
+		openssh-server \
+		gawk
 	sudo pip3 install thefuck
 
 }
