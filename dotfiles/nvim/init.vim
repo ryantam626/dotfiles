@@ -95,6 +95,12 @@ noremap <leader>bp :bp<CR>
 noremap <leader>bn :bn<CR>
 noremap <leader>bd :bp<cr>:bd #<CR>
 
+"" All things window
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wl <C-W>l
+nnoremap <leader>wh <C-W>h
+
 " Subword delete
 let g:EraseSubword_insertMap = "<M-Backspace>"
 
