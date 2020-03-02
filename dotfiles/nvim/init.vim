@@ -93,7 +93,7 @@ nnoremap <leader>sc :CloseSession<CR>
 "" All things buffer
 noremap <leader>bp :bp<CR>
 noremap <leader>bn :bn<CR>
-noremap <leader>bd :bd<CR>
+noremap <leader>bd :bp<cr>:bd #<CR>
 
 " Subword delete
 let g:EraseSubword_insertMap = "<M-Backspace>"
