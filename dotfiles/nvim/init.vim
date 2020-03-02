@@ -100,6 +100,9 @@ nnoremap <leader>wj <C-W>j
 nnoremap <leader>wk <C-W>k
 nnoremap <leader>wl <C-W>l
 nnoremap <leader>wh <C-W>h
+nnoremap <leader>wd <C-W>q
+nnoremap <leader>w- :split<CR>
+nnoremap <leader>wv :vsplit<CR>
 
 " Subword delete
 let g:EraseSubword_insertMap = "<M-Backspace>"
