@@ -139,14 +139,14 @@ augroup END
 "" [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'enter'
 
-"" Ctrl+P for fuzzy finder ala sublime
-noremap <C-P> :FZF<CR>
-"" Ctrl+R for file structure ala sublime TODO
-noremap <C-R> :FZF<CR>
-"" Ctrl+M for marks
-noremap <C-M> :Marks<CR>
-" Commands with Ctrl-Shift-P ala sublime
-noremap <C-S-P> :Commands<CR>
+"" Ctrl+p for fuzzy finder ala sublime
+noremap <C-p> :FZF<CR>
+"" Ctrl+r for file structure ala sublime TODO
+" noremap <C-r> :FZF<CR>
+"" Ctrl+m for marks
+noremap <C-m> :Marks<CR>
+" Commands with Alt-p
+noremap <M-p> :Commands<CR>
 
 
 "*****************************************************************************
