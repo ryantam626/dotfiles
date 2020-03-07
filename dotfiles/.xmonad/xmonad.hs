@@ -136,10 +136,10 @@ myKeys =
     , ("M-S-l", withFocused (keysResizeWindow (35, 0) (0, 0)))
     , ("M-S-k", withFocused (keysResizeWindow (0, -35) (0, 0)))
     , ("M-S-j", withFocused (keysResizeWindow (0, 35) (0, 0)))
-    , ("M1-S-h", withFocused (keysMoveWindow (-35, 0)))
-    , ("M1-S-l", withFocused (keysMoveWindow (35, 0)))
-    , ("M1-S-k", withFocused (keysMoveWindow (0, -35)))
-    , ("M1-S-j", withFocused (keysMoveWindow (0, 35)))
+    , ("M-M1-h", withFocused (keysMoveWindow (-35, 0)))
+    , ("M-M1-l", withFocused (keysMoveWindow (35, 0)))
+    , ("M-M1-k", withFocused (keysMoveWindow (0, -35)))
+    , ("M-M1-j", withFocused (keysMoveWindow (0, 35)))
     ] ++
     [ ("M-" ++ [key], restrcitedView tag $ tag)
     | (tag, key) <- zip myWorkspaces "123456789"
