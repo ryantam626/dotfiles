@@ -7,6 +7,7 @@ import XMonad.Actions.DynamicProjects
 import XMonad.Actions.GridSelect
 import XMonad.Actions.OnScreen
 import XMonad.Actions.PerWorkspaceKeys
+import XMonad.Actions.FloatKeys
 import XMonad.Actions.UpdatePointer
 import XMonad.Actions.WindowBringer
 import XMonad.Hooks.DynamicLog
@@ -129,6 +130,16 @@ myKeys =
     , ("M1-C-l", spawn "i3lock-fancy")
     , ("M-b", bringMenuArgs' "rofi" ["-dmenu", "-i", "-theme", "Pop-Dark"])
     , ("M-s", windows $ W.shift "6")
+    , ("M-<Tab>", windows focusUp >> windows shiftMaster)
+    , ("M-f", withFocused $ XMonad.Operations.float)
+    , ("M-S-h", withFocused (keysResizeWindow (-35, 0) (0, 0)))
+    , ("M-S-l", withFocused (keysResizeWindow (35, 0) (0, 0)))
+    , ("M-S-k", withFocused (keysResizeWindow (0, -35) (0, 0)))
+    , ("M-S-j", withFocused (keysResizeWindow (0, 35) (0, 0)))
+    , ("M1-S-h", withFocused (keysMoveWindow (-35, 0)))
+    , ("M1-S-l", withFocused (keysMoveWindow (35, 0)))
+    , ("M1-S-k", withFocused (keysMoveWindow (0, -35)))
+    , ("M1-S-j", withFocused (keysMoveWindow (0, 35)))
     ] ++
     [ ("M-" ++ [key], restrcitedView tag $ tag)
     | (tag, key) <- zip myWorkspaces "123456789"
