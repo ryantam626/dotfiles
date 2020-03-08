@@ -16,6 +16,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.SimplestFloat
 import XMonad.Layout.ShowWName
 import XMonad.Operations
 import XMonad.StackSet as W
@@ -106,6 +107,7 @@ showWorkspaceName = showWName' myShowWNameTheme
 myLayoutHook = showWorkspaceName
     $ avoidStruts
     $ onWorkspace myWorkspace2 Full
+    $ onWorkspace myWorkspace1 (Full ||| simplestFloat)
     $ smartBorders
     $ layoutHook defaultConfig
 myHandleEventHook =
