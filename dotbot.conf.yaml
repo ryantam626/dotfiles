@@ -27,6 +27,9 @@
     ~/.config/gtk-3.0:
         path: dotfiles/gtk-3.0
         force: true
+    ~/.config/sublime-text-3:
+        path: dotfiles/sublime-text-3
+        force: true
     ~/.Xresources:
         path: dotfiles/.Xresources
     ~/.gitconfig:

@@ -1,0 +1,9 @@
+[
+	{ "keys": ["alt+backspace"], "command": "run_macro_file", "args": {"file": "Packages/User/delete_subword.sublime-macro"} },
+	{ "keys": ["alt+delete"], "command": "run_macro_file", "args": {"file": "Packages/User/delete_subword_forward.sublime-macro"} },
+	{ "keys": ["ctrl+up"], "command": "column_select", "args": {"by": "lines", "forward": false}},
+	{ "keys": ["ctrl+down"], "command": "column_select", "args": {"by": "lines", "forward": true}},
+	{ "keys": ["ctrl+w"], "command": "close_file"},
+	{ "keys": ["ctrl+s"], "command": "save" },
+	{ "keys": ["alt+z"], "command": "toggle_neovintageous"}
+]

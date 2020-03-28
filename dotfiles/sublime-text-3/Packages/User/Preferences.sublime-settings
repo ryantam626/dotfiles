@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow-twilight.tmTheme",
+	"ignored_packages":
+	[
+		"Six",
+		"Vintage",
+		"Vintageous"
+	],
+	"neovintageous_build_version": 11100,
+	"vintageous_use_ctrl_keys": null,
+	"vintageous_use_super_keys": null
+}
