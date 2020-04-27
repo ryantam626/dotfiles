@@ -55,20 +55,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 "" Ident
 Plug 'tpope/vim-sleuth'
 
-"" Language server protocol client
-"" NOTE: Require further LSP server setup!!!!!!
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-
-"" Autocomplete
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-"" Typescript IDE
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
-
 call plug#end()
 
 "*****************************************************************************
@@ -115,25 +101,6 @@ nnoremap <space>ac :%y+<CR>
 
 " Redo with U instead of Ctrl-R
 noremap U <C-R>
-
-
-"*****************************************************************************
-"" Language Server Protocol Settings
-"*****************************************************************************
-
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> <f2> <plug>(lsp-rename)
-    " refer to doc to add more commands
-endfunction
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
 
 "*****************************************************************************
 "" FZF Settings
