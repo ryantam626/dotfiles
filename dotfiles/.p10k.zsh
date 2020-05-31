@@ -37,10 +37,17 @@
   }
   POWERLEVEL9K_CUSTOM_NIX_ENV="zsh_nix_env"
 
+  zsh_project_env(){
+      [ -z "$ACTIVATED_PROJECT" ] && return
+      echo -n "$ACTIVATED_PROJECT"
+  }
+  POWERLEVEL9K_CUSTOM_PROJECT_ENV="zsh_project_env"
+
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
       custom_nix_env          # show $NIX_ENV
+      custom_project_env      # show $ACTIVATED_PROJECT
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       pyenv                   # python environment (https://github.com/pyenv/pyenv)
       anaconda                # conda environment (https://conda.io/)
