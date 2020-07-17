@@ -50,7 +50,7 @@ cd dotfiles
 ./installers/install_zsh_plugins.sh
 
 tmux # start tmux up once to initialise some stuff
-# <Ctrl-A>+<D> to detach from tmux
+# <Ctrl-B>+<D> to detach from tmux
 
 # back in the `zsh` you started with do ...
 ./installers/install-dotfiles.sh
