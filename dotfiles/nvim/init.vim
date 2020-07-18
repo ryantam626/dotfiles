@@ -55,26 +55,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 "" Ident
 Plug 'tpope/vim-sleuth'
 
-" Vim-Plug
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-" For async completion
-Plug 'Shougo/deoplete.nvim'
-" For Denite features
-Plug 'Shougo/denite.nvim'
-Plug 'deoplete-plugins/deoplete-jedi'
-
-
-" Enable deoplete at startup
-
-  let g:deoplete#enable_at_startup = 1
-
-
 call plug#end()
-
-"" TMP
-let g:deoplete#enable_at_startup = 1
-
 
 "*****************************************************************************
 "" Theme
