@@ -22,6 +22,7 @@ install_nix
 install_pycharm
 install_spotify
 install_telegram
+install_pyenv
 
 # placed last because this ends with a chsh and effectively halts the script
 install_zsh
