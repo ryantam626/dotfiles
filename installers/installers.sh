@@ -154,7 +154,7 @@ install_spotify() {
 }
 
 install_pycharm() {
-	PYCHARM_VERSION="pycharm-professional-2019.2.4"
+	PYCHARM_VERSION="pycharm-professional-2020.1.3"
 	PYCHARM_DIR_NAME=${PYCHARM_VERSION/-professional/}
 	PYCHARM_TAR="${PYCHARM_VERSION}.tar.gz"
 	LAUNCH_PYCHARM_CMD="wmname LG3D && ~/apps/${PYCHARM_DIR_NAME}/bin/pycharm.sh"
