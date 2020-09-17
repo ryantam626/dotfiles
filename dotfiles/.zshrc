@@ -161,10 +161,9 @@ setup_virtualenv() {
     if [[ -v NIX_ENV ]]; then
         return
     fi
-    local VIRTUALENV_WRAPPER_SCRIPT="/home/ryan/.local/bin/virtualenvwrapper.sh"
+    local VIRTUALENV_WRAPPER_SCRIPT="/home/ryan/miniconda3/bin/virtualenvwrapper.sh"
     if [[ -f "${VIRTUALENV_WRAPPER_SCRIPT}" ]]; then
-        export WORKON_HOME=~/Envs
-        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+        export VIRTUALENVWRAPPER_PYTHON=/home/ryan/miniconda3/bin/python
         source "${VIRTUALENV_WRAPPER_SCRIPT}"
     fi
 
