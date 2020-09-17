@@ -141,6 +141,7 @@ alias gma="git checkout master"
 alias grecent="git for-each-ref --sort=-committerdate --count=20 --format='%(refname:short)' refs/heads/"
 alias gsh="git show"
 alias gtmp="git checkout tmp"
+alias rbm='git rebase $(git_main_branch) -i'
 alias rb="grbi @^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 alias rt="gb | grep rt."
 alias watch="watch "  # Just to get alias working for the command to be watched (only the first alias epxands)
