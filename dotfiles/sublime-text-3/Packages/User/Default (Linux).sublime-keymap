@@ -15,7 +15,7 @@
 
     { "keys": ["ctrl+a", "-"], "command": "travel_to_pane", "args": {"direction": "down", "create_new_if_necessary": true} },
     { "keys": ["ctrl+a", "_"], "command": "travel_to_pane", "args": {"direction": "right", "create_new_if_necessary": true} },
-    { "keys": ["ctrl+a", "ctrl+d"], "command": "destroy_pane", "args": {"direction": "self"} },
+    { "keys": ["ctrl+a", "x"], "command": "destroy_pane", "args": {"direction": "self"} },
 
     { "keys": ["ctrl+a", "h"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
     { "keys": ["ctrl+a", "l"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
