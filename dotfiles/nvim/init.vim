@@ -80,6 +80,7 @@ nnoremap <leader>sc :CloseSession<CR>
 noremap <leader>bp :bp<CR>
 noremap <leader>bn :bn<CR>
 noremap <leader>bd :bp<cr>:bd #<CR>
+noremap <leader>qq :bp<cr>:bd! #<CR>
 
 "" All things window
 nnoremap <leader>wj <C-W>j
