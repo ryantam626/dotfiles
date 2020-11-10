@@ -24,7 +24,7 @@ These are my machine-common dotfiles and scripts to setup my workstations.
 
 ## GUI
 
-- sublime (spare editor, config is not ported yet)
+- sublime (spare editor)
 - spotify (music client, themed by spicetify)
 
 ## Other shit

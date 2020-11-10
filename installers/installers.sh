@@ -124,7 +124,7 @@ install_telegram() {
 
 
 install_spotify() {
-	curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 	sudo apt-get update && sudo apt-get install spotify-client -y
 
@@ -196,6 +196,7 @@ install_docker() {
 	sudo chmod +x /usr/local/bin/docker-compose
 }
 
-install_pyenv() { 
-	git clone https://github.com/pyenv/pyenv.git ~/.pyenv    
+install_pyenv() {
+	sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 }
