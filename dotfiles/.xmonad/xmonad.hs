@@ -130,6 +130,7 @@ myKeys =
     , ("M-p", spawn myMenu)
     , ("M1-<F4>", kill)
     , ("M1-C-l", spawn "i3lock-fancy")
+    , ("M-<F10>", spawn "shutter -s -e")
     , ("M-b", bringMenuArgs' "rofi" ["-dmenu", "-i", "-theme", "Pop-Dark"])
     , ("M-s", windows $ W.shift "6")
     , ("M-<Tab>", windows focusUp >> windows shiftMaster)
