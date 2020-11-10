@@ -207,3 +207,5 @@ command! RemoveTrailingWhitespaces :%s/\s\+$//e
 
 " K in rebase should be mapped to git show in a proper terminal
 autocmd FileType gitrebase setlocal keywordprg=:enew\ \|\ terminal\ git\ --no-pager\ show
+
+set spell
