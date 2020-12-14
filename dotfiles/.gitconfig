@@ -9,3 +9,5 @@
 	showPatch = true
 [rebase]
 	autosquash = true
+[pull]
+	rebase = true
