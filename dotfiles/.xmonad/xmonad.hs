@@ -41,7 +41,6 @@ myWorkspace6 = "6"
 myWorkspaces = [myWorkspace1,myWorkspace2,myWorkspace3,myWorkspace4,myWorkspace5,myWorkspace6]
 -- Workspace 2 (Terminal) is NOT meant to shift around, don't bother binding keys for it
 myFlexibleWorkspace = Prelude.filter (\w -> w/=myWorkspace2) myWorkspaces
-myStartupWorkspace = myWorkspace2
 
 myProjects =
     [ Project { projectName = myWorkspace1
@@ -50,11 +49,11 @@ myProjects =
               }
     , Project { projectName = myWorkspace2
               , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawnOnOnce myWorkspace2 myTerminalWithTmux
+              , projectStartHook = Nothing
               }
     , Project { projectName = myWorkspace3
               , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawnOnOnce myWorkspace3 myBroswer
+              , projectStartHook = Nothing
               }
     , Project { projectName = myWorkspace4
               , projectDirectory = "~/"
@@ -65,7 +64,7 @@ myProjects =
               , projectStartHook = Nothing
               }
     , Project { projectName = myWorkspace6
-              , projectDirectory = "~/notes"
+              , projectDirectory = "~/"
               , projectStartHook = Nothing
               }
     ]
