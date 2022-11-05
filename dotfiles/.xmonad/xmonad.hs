@@ -113,11 +113,9 @@ restrcitedView ws
   | otherwise = windows . W.view
 
 myKeys =
-    , ("M-g", goToSelected defaultGSConfig)
-    , ("M-h", windows W.focusDown)
-    , ("M-l", windows W.focusUp)
-    , ("M-C-h", sendMessage Shrink)
-    , ("M-C-l", sendMessage Expand)
+    [ ("M-g", goToSelected defaultGSConfig)
+    , ("M-h", sendMessage Shrink)
+    , ("M-l", sendMessage Expand)
     , ("M-p", spawn myMenu)
     , ("M1-<F4>", kill)
     , ("M1-C-l", spawn "i3lock-fancy")
