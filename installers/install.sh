@@ -21,6 +21,7 @@ install_telegram
 install_spotify
 install_pycharm
 install_docker
+install_kmonad
 
 # placed last because this ends with a chsh and effectively halts the script
 install_zsh

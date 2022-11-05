@@ -169,6 +169,13 @@ install_docker() {
 	sudo pip3 install docker-compose
 }
 
+install_kmonad() {
+	sudo docker build -t kmonad-builder github.com/kmonad/kmonad.git
+	sudo docker run --rm -it -v /tmp/kmonad:/host/ kmonad-builder bash -c 'cp -vp /root/.local/bin/kmonad /host/'
+	sudo docker rmi kmonad-builder
+	sudo mv /tmp/kmonad/kmonad /usr/local/bin
+}
+
 install_zsh() {
 	info "Installing ZSH-related stuff\n"
 	${QUIET_APT_INSTALL} zsh
