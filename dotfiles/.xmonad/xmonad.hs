@@ -70,6 +70,7 @@ myProjects =
               }
     ]
 
+
 myManageSpecific = composeOne
     [ isRole =? "GtkFileChooserDialog" -?> doRectFloat (RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
     , className =? "Google-chrome" -?> viewShift myWorkspace3
@@ -88,16 +89,8 @@ myFont      = "-*-terminus-medium-*-*-*-*-160-*-*-*-*-*-*"
 myBigFont   = "-*-terminus-medium-*-*-*-*-240-*-*-*-*-*-*"
 myWideFont  = "xft:Eurostar Black Extended:"
             ++ "style=Regular:pixelsize=180:hinting=true"
-myShowWNameTheme = def
-    { swn_font = myWideFont
-    , swn_fade = 0.1
-    , swn_bgcolor = color8
-    , swn_color = color7
-    }
-showWorkspaceName = showWName' myShowWNameTheme
 
-myLayoutHook = showWorkspaceName
-    $ avoidStruts
+myLayoutHook = avoidStruts
     $ onWorkspace myWorkspace2 Full
     $ onWorkspace myWorkspace1 (Full ||| simplestFloat)
     $ smartBorders
