@@ -21,7 +21,6 @@ import XMonad.Layout.ShowWName
 import XMonad.Operations
 import XMonad.StackSet as W
 import XMonad.Util.EZConfig
-import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce(spawnOnce,spawnOnOnce)
 
@@ -71,10 +70,6 @@ myProjects =
               }
     ]
 
-myScratchPads = [ (NS "notes" "/home/ryan/scripts/launch-sublime-notes.sh" (stringProperty "_NOTES" =? "true") defaultFloating)
-                ]
-
-
 myManageSpecific = composeOne
     [ isRole =? "GtkFileChooserDialog" -?> doRectFloat (RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
     , className =? "Google-chrome" -?> viewShift myWorkspace3
@@ -85,11 +80,8 @@ myManageSpecific = composeOne
 
 myManageHook :: ManageHook
 myManageHook = manageDocks
-    <+> namedScratchpadManageHook myScratchPads
     <+> myManageSpecific
     <+> manageHook defaultConfig
-
-
 
 myBorderWidth = 3
 myFont      = "-*-terminus-medium-*-*-*-*-160-*-*-*-*-*-*"
@@ -121,7 +113,6 @@ restrcitedView ws
   | otherwise = windows . W.view
 
 myKeys =
-    [ ("M-n", namedScratchpadAction myScratchPads "notes")
     , ("M-g", goToSelected defaultGSConfig)
     , ("M-h", windows W.focusDown)
     , ("M-l", windows W.focusUp)
