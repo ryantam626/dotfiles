@@ -39,8 +39,6 @@ myWorkspace4 = "4"  -- Music and notes
 myWorkspace5 = "5"  -- Telegram
 myWorkspace6 = "6"
 myWorkspaces = [myWorkspace1,myWorkspace2,myWorkspace3,myWorkspace4,myWorkspace5,myWorkspace6]
--- Workspace 2 (Terminal) is NOT meant to shift around, don't bother binding keys for it
-myFlexibleWorkspace = Prelude.filter (\w -> w/=myWorkspace2) myWorkspaces
 
 myProjects =
     [ Project { projectName = myWorkspace1
@@ -90,19 +88,12 @@ myWideFont  = "xft:Eurostar Black Extended:"
             ++ "style=Regular:pixelsize=180:hinting=true"
 
 myLayoutHook = avoidStruts
-    $ onWorkspace myWorkspace2 Full
-    $ onWorkspace myWorkspace1 (Full ||| simplestFloat)
     $ smartBorders
     $ layoutHook defaultConfig
 myHandleEventHook =
     handleEventHook defaultConfig
     <+> docksEventHook
     <+> fullscreenEventHook
-
-restrcitedView ws
-  | ws == myWorkspace2 = windows . (viewOnScreen 0)
-  | ws == myWorkspace1 = windows . (viewOnScreen 0)
-  | otherwise = windows . W.view
 
 myKeys =
     [ ("M-g", goToSelected defaultGSConfig)
@@ -125,12 +116,6 @@ myKeys =
     , ("M-M1-k", withFocused (keysMoveWindow (0, -35)))
     , ("M-M1-j", withFocused (keysMoveWindow (0, 35)))
     ] ++
-    [ ("M-" ++ [key], restrcitedView tag $ tag)
-    | (tag, key) <- zip myWorkspaces "123456789"
-    ] ++
-    [ ("M-S-" ++ [key], bindOn [(fws, windows . W.shift $ tag) | fws <- myFlexibleWorkspace])
-    | (tag, key) <- zip myFlexibleWorkspace "13456789"
-    ] ++
     [ ("M-" ++ [key], screenWorkspace screen >>= flip whenJust (windows .W.view))
     | (key, screen)  <- zip "iu" [0,1]
     ]
@@ -140,8 +125,7 @@ myKeysToRemove =
     | (key) <- "wer"
     , (otherModMasks) <- ["", "S-"]
     ] ++
-    [ "M-S-2"
-    , "M-S-c"
+    [ "M-S-c"
     ]
 
 -- Color of current window title in xmobar.
