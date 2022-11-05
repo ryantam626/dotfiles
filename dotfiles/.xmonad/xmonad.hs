@@ -163,10 +163,6 @@ myKeysToRemove =
     , "M-S-c"
     ]
 
-myStartupHook = do
-    windows . viewOnScreen 1 $ myWorkspace3
-    windows . viewOnScreen 0 $ myWorkspace2
-
 -- Color of current window title in xmobar.
 xmobarTitleColor = "#FFB6B0"
 
@@ -192,7 +188,6 @@ myConfig proc =
         , normalBorderColor = background
         , focusedBorderColor = color12
         , XMonad.workspaces = myWorkspaces
-        , startupHook = myStartupHook
         , logHook = myLogHook proc
         } `additionalKeysP` myKeys `removeKeysP` myKeysToRemove
 
