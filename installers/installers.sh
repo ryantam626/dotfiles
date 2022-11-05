@@ -46,7 +46,8 @@ install_utils() {
 		fzf \
 		autoconf \
 		openssh-server \
-		gawk
+		gawk \
+		shutter
 	sudo pip3 install thefuck
 }
 
