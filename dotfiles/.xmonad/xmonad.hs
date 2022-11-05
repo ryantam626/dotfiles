@@ -118,6 +118,9 @@ myKeys =
     ] ++
     [ ("M-" ++ [key], screenWorkspace screen >>= flip whenJust (windows .W.view))
     | (key, screen)  <- zip "iu" [0,1]
+    ] ++
+    [ ("M-S-" ++ [key], screenWorkspace screen >>= flip whenJust (windows .W.shift))
+    | (key, screen)  <- zip "iu" [0,1]
     ]
 
 myKeysToRemove =
