@@ -4,35 +4,17 @@ SCRIPT_DIR=$(dirname $SCRIPT_PATH)/
 
 source $SCRIPT_DIR/helpers.sh
 
-install_sublime() {
-	info "Installing sublime\n"
-	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-	sudo apt-get update && ${QUIET_APT_INSTALL} sublime-text
+GLOBAL_PYTHON_VER="3.10.4"
+
+install_pyenv() {
+	${QUIET_APT_INSTALL} install python3-pip
+
+	sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+	/home/ryan/.pyenv/bin/pyenv install $GLOBAL_PYTHON_VER
+	/home/ryan/.pyenv/bin/pyenv global $GLOBAL_PYTHON_VER
 }
-
-install_python3() {
-	info "Install basic python3 tool\n"
-	${QUIET_APT_INSTALL} python3-pip
-}
-
-install_zsh() {
-	info "Installing ZSH-related stuff\n"
-	${QUIET_APT_INSTALL} zsh
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
-
-
-
-}
-
-install_zsh_plugins() {
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k
-	#git clone git@github.com:chisui/zsh-nix-shell.git $ZSH/custom/plugins/nix-shell
-	#git clone git@github.com:spwhitt/nix-zsh-completions.git $ZSH/custom/plugins/nix-zsh-completions
-	git clone https://github.com/zsh-users/zsh-completions ${ZSH}/custom/plugins/zsh-completions
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-}
-
 
 install_wm() {
 	info "Installing xmonad and friends\n"
@@ -60,14 +42,12 @@ install_utils() {
 	info "Installing other utils\n"
 	${QUIET_APT_INSTALL} \
 		xsel \
-		xcape \
 		pavucontrol \
 		fzf \
 		autoconf \
 		openssh-server \
 		gawk
 	sudo pip3 install thefuck
-
 }
 
 install_theme() {
@@ -80,6 +60,13 @@ install_theme() {
 	sudo make install
 	popd
 	rm -rf /tmp/arc-icon-theme
+}
+
+install_sublime() {
+	info "Installing sublime\n"
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	sudo apt-get update && ${QUIET_APT_INSTALL} sublime-text
 }
 
 install_pywal() {
@@ -122,39 +109,19 @@ install_telegram() {
 	sudo chmod +x /usr/local/bin/telegram
 }
 
-
 install_spotify() {
-	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+	curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
 	sudo apt-get update && sudo apt-get install spotify-client -y
 
-	mkdir -p /tmp/spicetify/spicetify
 	mkdir -p ~/apps
-	pushd /tmp/spicetify
-	wget https://github.com/khanhas/spicetify-cli/releases/download/v0.9.5/spicetify-0.9.5-linux-amd64.tar.gz -P /tmp/spicetify
-	tar -xf spicetify-0.9.5-linux-amd64.tar.gz -C spicetify
-	mv spicetify ~/apps
-	popd
-	rm -rf /tmp/spicetify
 
 	sudo chmod 777 /usr/share/spotify -R
-
-	~/apps/spicetify/spicetify
-
-	git clone https://github.com/morpheusthewhite/spicetify-themes.git /tmp/spicetify-themes
-	pushd /tmp/spicetify-themes
-	cp -r * ~/.config/spicetify/Themes
-	popd
-	rm -rf /tmp/spicetify-themes
-
-	spotify &  # spotify has to be ran at least once before applying theme
-	sleep 5  # yeah...
-	~/apps/spicetify/spicetify config current_theme Pop-Dark
-	~/apps/spicetify/spicetify backup apply
 }
 
 install_pycharm() {
-	PYCHARM_VERSION="pycharm-professional-2020.1.3"
+	PYCHARM_VERSION="pycharm-professional-2022.2.3"
 	PYCHARM_DIR_NAME=${PYCHARM_VERSION/-professional/}
 	PYCHARM_TAR="${PYCHARM_VERSION}.tar.gz"
 	LAUNCH_PYCHARM_CMD="wmname LG3D && ~/apps/${PYCHARM_DIR_NAME}/bin/pycharm.sh"
@@ -177,26 +144,39 @@ install_pycharm() {
 	sudo chmod +x ${LAUNCH_PYCHARM_SCRIPT_PATH}
 }
 
-install_nix() {
-	curl https://nixos.org/nix/install | sh
-}
-
 install_docker() {
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
-	sudo add-apt-repository \
-	   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-	   disco \
-	   stable"
+	sudo apt-get install \
+	    ca-certificates \
+	    curl \
+	    gnupg \
+	    lsb-release
 
-	${QUIET_APT_INSTALL} docker-ce docker-ce-cli containerd.io
+	sudo mkdir -p /etc/apt/keyrings
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+	echo \
+	  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+	  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+	sudo apt-get update
+
+	${QUIET_APT_INSTALL} docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
 	sudo groupadd docker || true
 	sudo gpasswd -a $USER docker
 
-	sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-	sudo chmod +x /usr/local/bin/docker-compose
+	sudo pip3 install docker-compose
 }
 
-install_pyenv() {
-	sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
-	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+install_zsh() {
+	info "Installing ZSH-related stuff\n"
+	${QUIET_APT_INSTALL} zsh
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
 }
+
+install_zsh_plugins() {
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k
+	git clone https://github.com/zsh-users/zsh-completions ${ZSH}/custom/plugins/zsh-completions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+}
+

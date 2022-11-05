@@ -8,7 +8,7 @@ SCRIPT_DIR=$(dirname $SCRIPT_PATH)/
 source $SCRIPT_DIR/helpers.sh
 source $SCRIPT_DIR/installers.sh
 
-install_python3
+install_pyenv
 install_wm
 install_launcher
 install_terminal
@@ -17,12 +17,10 @@ install_theme
 install_sublime
 install_pywal
 install_fonts
-install_docker
-install_nix
-install_pycharm
-install_spotify
 install_telegram
-install_pyenv
+install_spotify
+install_pycharm
+install_docker
 
 # placed last because this ends with a chsh and effectively halts the script
 install_zsh
