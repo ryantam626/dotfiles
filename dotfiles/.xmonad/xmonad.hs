@@ -30,7 +30,7 @@ import qualified Data.Map as M
 myTerminal = "urxvt"
 myTerminalWithTmux = "urxvt -e sh -c 'tmux'"
 myBroswer = "google-chrome"
-myMenu = "rofi -show run -theme Pop-Dark"
+myMenu = "rofi -show run"
 
 myModMask = mod4Mask
 myWorkspace1 = "1"  -- Code Edtior

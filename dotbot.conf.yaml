@@ -6,6 +6,8 @@
     - ~/.config/nvim
 
 - link:
+    ~/.config/rofi:
+        path: dotfiles/rofi
     ~/.config/nvim/:
         if: '[ -x "$(command -v nvim)" ]'
         glob: true
@@ -36,9 +38,6 @@
         path: dotfiles/.gitconfig
     ~/scripts:
     ~/wallpapers:
-    ~/.condarc:
-        if: '[ -x "$(command -v conda)" ]'
-        path: dotfiles/.condarc
     # Keyboard remapping config
     ~/.xkb:
         path: dotfiles/.xkb
