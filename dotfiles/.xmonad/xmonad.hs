@@ -132,7 +132,7 @@ myKeys =
     | (tag, key) <- zip myFlexibleWorkspace "13456789"
     ] ++
     [ ("M-" ++ [key], screenWorkspace screen >>= flip whenJust (windows .W.view))
-    | (key, screen)  <- zip "ui" [0,1]
+    | (key, screen)  <- zip "iu" [0,1]
     ]
 
 myKeysToRemove =
