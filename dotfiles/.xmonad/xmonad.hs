@@ -105,6 +105,7 @@ myKeys =
     , ("M-b", bringMenuArgs' "rofi" ["-dmenu", "-i", "-theme", "Pop-Dark"])
     , ("M-s", windows $ W.shift "6")
     , ("M-<Tab>", toggleWS)
+    , ("M1-<Tab>", windows focusUp >> windows shiftMaster)
     , ("M-f", withFocused $ XMonad.Operations.float)
     , ("M-S-h", withFocused (keysResizeWindow (-35, 0) (0, 0)))
     , ("M-S-l", withFocused (keysResizeWindow (35, 0) (0, 0)))
