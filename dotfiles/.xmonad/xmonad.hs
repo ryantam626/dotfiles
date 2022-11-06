@@ -70,11 +70,8 @@ myProjects =
 
 myManageSpecific = composeOne
     [ isRole =? "GtkFileChooserDialog" -?> doRectFloat (RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
-    , className =? "Google-chrome" -?> viewShift myWorkspace3
-    , (className /=? "URxvt" <&&> currentWs =? myWorkspace2) -?> viewShift myWorkspace1
     ]
-    where viewShift = doF . liftM2 (.) W.view W.shift
-          isRole = stringProperty "WM_WINDOW_ROLE"
+    where isRole = stringProperty "WM_WINDOW_ROLE"
 
 myManageHook :: ManageHook
 myManageHook = manageDocks
