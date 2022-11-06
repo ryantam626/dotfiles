@@ -192,3 +192,8 @@ install_zsh_plugins() {
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
 
+
+install_python_management() {
+	curl -sSL https://install.python-poetry.org | python3 -
+	pip install virtualenvwrapper virtualenv
+}
