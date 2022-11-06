@@ -58,6 +58,9 @@ tmux # start tmux up once to initialise some stuff
 # optionally start up neovim with `vim`, included bootstrap will install plugins after prompt
 
 reboot
+
+# Install poetry and venv manager
+./installers/install_python_management.sh
 ```
 
 ## Known quirks
