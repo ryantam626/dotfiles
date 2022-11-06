@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export GLOBAL_PYTHON_VER="3.10.8"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$HOME/.poetry/bin:$HOME/local/bin:$PATH
@@ -159,15 +161,8 @@ eval $(thefuck --alias)
 
 # venv stuff
 setup_virtualenv() {
-    if [[ -v NIX_ENV ]]; then
-        return
-    fi
-    local VIRTUALENV_WRAPPER_SCRIPT="/home/ryan/miniconda3/bin/virtualenvwrapper.sh"
-    if [[ -f "${VIRTUALENV_WRAPPER_SCRIPT}" ]]; then
-        export VIRTUALENVWRAPPER_PYTHON=/home/ryan/miniconda3/bin/python
-        source "${VIRTUALENV_WRAPPER_SCRIPT}"
-    fi
-
+    export VIRTUALENVWRAPPER_PYTHON=/home/ryan/.pyenv/versions/3.10.8/bin/python
+    source /home/ryan/.pyenv/versions/${GLOBAL_PYTHON_VER}/bin/virtualenvwrapper.sh
 }
 setup_virtualenv
 
