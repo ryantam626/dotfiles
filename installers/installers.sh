@@ -50,6 +50,7 @@ install_utils() {
 		flameshot \
 		ncal
 	sudo pip3 install thefuck
+	sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 }
 
 install_theme() {
