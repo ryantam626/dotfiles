@@ -4,7 +4,7 @@ SCRIPT_DIR=$(dirname $SCRIPT_PATH)/
 
 source $SCRIPT_DIR/helpers.sh
 
-GLOBAL_PYTHON_VER="3.10.4"
+GLOBAL_PYTHON_VER="3.10.8"
 
 install_pyenv() {
 	${QUIET_APT_INSTALL} install python3-pip
