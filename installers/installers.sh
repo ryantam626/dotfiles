@@ -174,6 +174,10 @@ install_kmonad() {
 	sudo docker run --rm -it -v /tmp/kmonad:/host/ kmonad-builder bash -c 'cp -vp /root/.local/bin/kmonad /host/'
 	sudo docker rmi kmonad-builder
 	sudo mv /tmp/kmonad/kmonad /usr/local/bin
+
+	sudo ln -s /home/ryan/dotfiles/dotfiles/kmonad/services/a1-remap.service /etc/systemd/system
+	sudo systemctl enable a1-remap
+	sudo systemctl start a1-remap
 }
 
 install_zsh() {
