@@ -1,9 +1,6 @@
 # Setup monitor
 /home/ryan/scripts/setup-monitor.sh
 
-# Remap keys
-/home/ryan/scripts/remap-keys.sh
-
 # Setup wallpaper
 /home/ryan/scripts/set-wallpaper.sh
 
