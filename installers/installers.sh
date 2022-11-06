@@ -47,7 +47,8 @@ install_utils() {
 		autoconf \
 		openssh-server \
 		gawk \
-		shutter
+		flameshot \
+		ncal
 	sudo pip3 install thefuck
 }
 
