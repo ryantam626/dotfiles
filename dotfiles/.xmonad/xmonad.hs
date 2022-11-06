@@ -102,7 +102,7 @@ myKeys =
     , ("M1-C-l", spawn "i3lock-fancy")
     , ("M-<F10>", spawn "flameshot gui")
     , ("M-<F11>", spawn "flameshot launcher")
-    , ("M-b", bringMenuArgs' "rofi" ["-dmenu", "-i", "-theme", "Pop-Dark"])
+    , ("M-b", bringMenuArgs' "rofi" ["-dmenu"])
     , ("M-s", windows $ W.shift "6")
     , ("M-<Tab>", toggleWS)
     , ("M1-<Tab>", windows focusUp >> windows shiftMaster)
