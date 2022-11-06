@@ -24,17 +24,17 @@ These are my machine-common dotfiles and scripts to setup my workstations.
 
 ## GUI
 
+- pycharm (main editor)
 - sublime (spare editor)
-- spotify (music client, themed by spicetify)
+- spotify (music client)
 
 ## Other shit
 
-- setxkbmap (changes keymap to a very custom one, to be explained some day...)
-- xcape (mapping capslock to hyper modifier on long press)
+- kmonad (advanced keyboard remapping util)
 
 # Installation steps
 
-WARNING: This installs shit ton of stuff, and only MIGHT works for debian-based system (other than 20.04 ubuntu that I am using right now), there will be a high chance of seemingly bricking your system if you are unfamiliar with the changes. The `.xsessionrc` is a particular high risk one, you will need to recover your system by editing/removing the file with a tty (Ctrl+Alt+F3 works for me).
+WARNING: This installs shit ton of stuff, and only MIGHT works for debian-based system (other than 22.04 ubuntu that I am using right now), there will be a high chance of seemingly bricking your system if you are unfamiliar with the changes. The `.xsessionrc` is a particular high risk one, you will need to recover your system by editing/removing the file with a tty (Ctrl+Alt+F3 works for me).
 
 ```
 wget -O - https://raw.githubusercontent.com/ryantam626/dotfiles/master/installers/bootstrap.sh | sh
@@ -65,8 +65,8 @@ reboot
 
 ## Known quirks
 
-- zsh/p10k seem to fail to load proper theme with the very first tmux managed shell;
 - google-chrome is not installed, yet I use it as default browser in xmonad;
+- Some paths are hardcoded using my preferred user name in linux: ryan
 
 # License
 
