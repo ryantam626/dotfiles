@@ -78,7 +78,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z fzf zsh-completions zsh-syntax-highlighting docker docker-compose)
+plugins=(git z fzf zsh-completions zsh-syntax-highlighting docker docker-compose task)
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 autoload -Uz compinit && compinit
 
@@ -172,6 +172,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
+
 
 export SSH_USER=ryan
 alias gs='git status'
