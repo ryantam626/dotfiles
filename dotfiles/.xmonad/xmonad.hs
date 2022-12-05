@@ -100,6 +100,7 @@ myKeys =
     , ("M-p", spawn myMenu)
     , ("M1-<F4>", kill)
     , ("M1-C-l", spawn "i3lock-fancy")
+    , ("M-<F1>", spawn "flameshot gui")
     , ("M-<F10>", spawn "flameshot gui")
     , ("M-<F11>", spawn "flameshot launcher")
     , ("M-b", bringMenuArgs' "rofi" ["-dmenu"])
