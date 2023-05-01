@@ -18,7 +18,7 @@ install_sublime
 install_pywal
 install_fonts
 install_telegram
-install_spotify
+# install_spotify
 install_pycharm
 install_docker
 install_kmonad
