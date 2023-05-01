@@ -2,16 +2,11 @@
     link:
       relink: true
 
-- create:
-    - ~/.config/nvim
-
 - link:
     ~/.config/rofi:
         path: dotfiles/rofi
-    ~/.config/nvim/:
-        if: '[ -x "$(command -v nvim)" ]'
-        glob: true
-        path: dotfiles/nvim/*.vim
+    ~/.config/nvim:
+        path: dotfiles/nvim
         force: true
     ~/.zshrc:
         if: '[ -x "$(command -v zsh)" ]'

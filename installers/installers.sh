@@ -7,7 +7,7 @@ source $SCRIPT_DIR/helpers.sh
 GLOBAL_PYTHON_VER="3.10.8"
 
 install_pyenv() {
-	${QUIET_APT_INSTALL} install python3-pip
+	${QUIET_APT_INSTALL} python3-pip
 
 	sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -124,7 +124,7 @@ install_spotify() {
 }
 
 install_pycharm() {
-	PYCHARM_VERSION="pycharm-professional-2022.2.3"
+	PYCHARM_VERSION="pycharm-professional-2023.1.1"
 	PYCHARM_DIR_NAME=${PYCHARM_VERSION/-professional/}
 	PYCHARM_TAR="${PYCHARM_VERSION}.tar.gz"
 	LAUNCH_PYCHARM_CMD="wmname LG3D && ~/apps/${PYCHARM_DIR_NAME}/bin/pycharm.sh"
