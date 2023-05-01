@@ -3,6 +3,8 @@
       relink: true
 
 - link:
+    ~/.urxvt:
+        path: dotfiles/rofi
     ~/.config/rofi:
         path: dotfiles/rofi
     ~/.config/nvim:
@@ -33,9 +35,6 @@
         path: dotfiles/.gitconfig
     ~/scripts:
     ~/wallpapers:
-    # Keyboard remapping config
-    ~/.xkb:
-        path: dotfiles/.xkb
     # Desktop environment config follows
     ~/.xmonad:
         path: dotfiles/.xmonad
