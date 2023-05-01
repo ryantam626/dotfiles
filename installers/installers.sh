@@ -1,6 +1,7 @@
 QUIET_APT_INSTALL="sudo apt-get -qq -y -o Dpkg::Use-Pty=0 install"
 SCRIPT_PATH=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)/$(basename "$0")")
 SCRIPT_DIR=$(dirname $SCRIPT_PATH)/
+REPO_DIR=$(dirname $SCRIPT_DIR)/
 
 source $SCRIPT_DIR/helpers.sh
 
@@ -93,13 +94,8 @@ install_fonts() {
     ./install.sh
     popd
     rm -rf /tmp/fonts
-
-    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/UbuntuMonoNerdFontMono-Regular.ttf -P ~/.fonts
-
-    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular-Italic/UbuntuMonoNerdFontMono-Italic.ttf -P ~/.fonts
-    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Bold/UbuntuMonoNerdFontMono-Bold.ttf -P ~/.fonts
-    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Bold-Italic/UbuntuMonoNerdFontMono-BoldItalic.ttf -P ~/.fonts
-
+    
+    cp $REPO_DIR/Ubuntu\ Mono\ Nerd\ Font\ Complete\ Mono.ttf ~/.fonts
 
     fc-cache -vf
 }
