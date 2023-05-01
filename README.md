@@ -26,7 +26,6 @@ These are my machine-common dotfiles and scripts to setup my workstations.
 
 - pycharm (main editor)
 - sublime (spare editor)
-- spotify (music client)
 
 ## Other shit
 
@@ -67,6 +66,8 @@ reboot
 
 - google-chrome is not installed, yet I use it as default browser in xmonad;
 - Some paths are hardcoded using my preferred user name in linux: ryan
+- You need to manually re-install neovim from source probably;
+- Font seems slightly messed up, missing from characters for nvim;
 
 # License
 
