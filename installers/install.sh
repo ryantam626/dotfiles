@@ -20,6 +20,7 @@ install_fonts
 install_telegram
 # install_spotify
 install_pycharm
+install_idea
 install_docker
 install_kmonad
 
