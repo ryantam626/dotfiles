@@ -148,6 +148,31 @@ install_pycharm() {
 	sudo chmod +x ${LAUNCH_PYCHARM_SCRIPT_PATH}
 }
 
+install_idea() {
+	IDEA_VERSION="ideaIU-2023.2.2"
+	IDEA_DIR_NAME=${IDEA_VERSION/-professional/}
+	IDEA_TAR="${IDEA_VERSION}.tar.gz"
+
+	LAUNCH_IDEA_SCRIPT_PATH="/usr/local/bin/idea"
+	${QUIET_APT_INSTALL} wmname
+
+	mkdir -p /tmp/idea
+	wget https://download.jetbrains.com/idea/$IDEA_TAR -P /tmp/idea
+	wget https://download.jetbrains.com/idea/$IDEA_TAR.sha256 -P /tmp/idea/
+
+	pushd /tmp/idea
+	sha256sum -c ${IDEA_TAR}.sha256
+	tar -xf ${IDEA_TAR}
+	mkdir -p ~/apps
+	mv ${IDEA_DIR_NAME} ~/apps
+	popd
+	rm -rf /tmp/idea
+
+  LAUNCH_IDEA_CMD="wmname LG3D && $(find ~/apps/idea-IU-*/bin/idea.sh)"
+	echo "${LAUNCH_IDEA_CMD}" | sudo tee ${LAUNCH_IDEA_SCRIPT_PATH}
+	sudo chmod +x ${LAUNCH_IDEA_SCRIPT_PATH}
+}
+
 install_docker() {
 	sudo apt-get install \
 	    ca-certificates \
